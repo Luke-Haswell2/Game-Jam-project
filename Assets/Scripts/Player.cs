@@ -5,23 +5,38 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     Rigidbody2D rb;
+    HealthAndCombat healthAndCombat;
+
     public float normalSpeedMultiplier = 1;
     public float powerupSpeedMultiplier = 1.5f;
     public float normalDamageMultiplier = 1;
     public float powerupDamageMultiplier = 1.5f;
-
-    float health = 100.0f;
 
     float currentSpeedMultiplier;
     float currentDamageMultiplier;
 
     bool wantsJump;
 
+
     void Start()
     {
+        healthAndCombat = GetComponent<HealthAndCombat>();
+        healthAndCombat.OnDamage += OnDamage;
+        healthAndCombat.OnDeath += OnDeath;
+
         currentSpeedMultiplier = normalSpeedMultiplier;
         currentDamageMultiplier = normalDamageMultiplier;
         rb = GetComponent<Rigidbody2D>();
+    }
+
+    void OnDamage(int amount)
+    {
+
+    }
+
+    void OnDeath()
+    {
+
     }
 
     public IEnumerator ApplySpeedPowerup()
@@ -38,7 +53,7 @@ public class Player : MonoBehaviour
     }
     public void ApplyLifePowerup()
     {
-        health += 20;
+        healthAndCombat.Heal(20);
     }
 
     private void Update()
