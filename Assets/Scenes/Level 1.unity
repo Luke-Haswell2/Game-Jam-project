@@ -544,7 +544,7 @@ GameObject:
   - component: {fileID: 838883134}
   - component: {fileID: 838883133}
   m_Layer: 0
-  m_Name: player
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -699,7 +699,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6118912831073280091, guid: d91d660d6a22e414dafcbe9511dc650e, type: 3}
       propertyPath: m_Name
-      value: skeleton
+      value: Skeleton
       objectReference: {fileID: 0}
     - target: {fileID: 6118912831073280416, guid: d91d660d6a22e414dafcbe9511dc650e, type: 3}
       propertyPath: m_RootOrder
