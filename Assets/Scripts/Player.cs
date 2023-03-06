@@ -6,20 +6,31 @@ public class Player : MonoBehaviour
 {
     Rigidbody2D rb;
     HealthAndCombat healthAndCombat;
+    Animator anim;
 
     public float normalSpeedMultiplier = 1;
     public float powerupSpeedMultiplier = 1.5f;
     public float normalDamageMultiplier = 1;
     public float powerupDamageMultiplier = 1.5f;
 
+    public Rect attackBoundingBox;
+
     float currentSpeedMultiplier;
     float currentDamageMultiplier;
 
     bool wantsJump;
 
+    private void OnDrawGizmos()
+    {
+        Gizmos.matrix = transform.localToWorldMatrix;
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireCube(attackBoundingBox.center, attackBoundingBox.size);
+    }
+
 
     void Start()
     {
+        anim = GetComponent<Animator>();
         healthAndCombat = GetComponent<HealthAndCombat>();
         healthAndCombat.OnDamage += OnDamage;
         healthAndCombat.OnDeath += OnDeath;
@@ -61,6 +72,10 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             wantsJump = true;
+        }
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            healthAndCombat.TryAttack(attackBoundingBox, (int)(10 * currentDamageMultiplier));
         }
     }
 
