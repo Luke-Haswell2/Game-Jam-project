@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: 1018b0ba13578bf459bd254ae1a2be99
+guid: d8958855ae433194aae8dc9ee0b23e89
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4723107735738678597
-    second: Idle_0
+      213: -7500690451134026123
+    second: Take Hit_0
   - first:
-      213: -7385789195546760866
-    second: Idle_1
+      213: -889859373511162655
+    second: Take Hit_1
   - first:
-      213: 3234629978573100161
-    second: Idle_2
+      213: -3088938797480143695
+    second: Take Hit_2
   - first:
-      213: 6373048116405451881
-    second: Idle_3
+      213: -9206091644520726168
+    second: Take Hit_3
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -191,13 +191,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Idle_0
+      name: Take Hit_0
       rect:
         serializedVersion: 2
-        x: 60
-        y: 49
-        width: 45
-        height: 51
+        x: 0
+        y: 0
+        width: 150
+        height: 150
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -205,20 +205,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 802b177a59371084e8e2057c30969394
-      internalID: 4723107735738678597
+      spriteID: 8001f5382396b0e42804694bd233dea9
+      internalID: -7500690451134026123
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_1
+      name: Take Hit_1
       rect:
         serializedVersion: 2
-        x: 210
-        y: 49
-        width: 45
-        height: 50
+        x: 150
+        y: 0
+        width: 150
+        height: 150
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -226,20 +226,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 871540e7a5a9c664c9063eecbfeeec83
-      internalID: -7385789195546760866
+      spriteID: 3d460fe14c9ed0a458cafef20115ce8b
+      internalID: -889859373511162655
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_2
+      name: Take Hit_2
       rect:
         serializedVersion: 2
-        x: 360
-        y: 49
-        width: 45
-        height: 49
+        x: 300
+        y: 0
+        width: 150
+        height: 150
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -247,20 +247,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d02fbdcc14a2ef04c828db3d2813a8a5
-      internalID: 3234629978573100161
+      spriteID: 25967486e7e348740abc5bc83ba299cb
+      internalID: -3088938797480143695
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_3
+      name: Take Hit_3
       rect:
         serializedVersion: 2
-        x: 510
-        y: 49
-        width: 45
-        height: 50
+        x: 450
+        y: 0
+        width: 150
+        height: 150
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -268,8 +268,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fc0b2926828522c4fba31bf182b5a6ae
-      internalID: 6373048116405451881
+      spriteID: 40d0fec7b1a0ce44580c6babee3bb5e3
+      internalID: -9206091644520726168
       vertices: []
       indices: 
       edges: []
@@ -285,10 +285,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Idle_1: -7385789195546760866
-      Idle_3: 6373048116405451881
-      Idle_0: 4723107735738678597
-      Idle_2: 3234629978573100161
+      Take Hit_2: -3088938797480143695
+      Take Hit_1: -889859373511162655
+      Take Hit_0: -7500690451134026123
+      Take Hit_3: -9206091644520726168
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 
