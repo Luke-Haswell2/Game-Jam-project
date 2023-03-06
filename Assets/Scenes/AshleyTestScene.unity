@@ -270,6 +270,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abf62f8f601c8ab4c8d3cc48d195bdec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  normalSpeedMultiplier: 1
+  powerupSpeedMultiplier: 1.5
+  normalDamageMultiplier: 1
+  powerupDamageMultiplier: 1.5
 --- !u!61 &1736276820
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -393,6 +397,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1153493346367871824, guid: e2d81f5320a102342a88fda2c1c269dd, type: 3}
+      propertyPath: effect
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1153493346367871824, guid: e2d81f5320a102342a88fda2c1c269dd, type: 3}
       propertyPath: pointValue
       value: 100
       objectReference: {fileID: 0}
@@ -476,8 +484,7 @@ PrefabInstance:
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 315101568005928884, guid: e2d81f5320a102342a88fda2c1c269dd, type: 3}
+    m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: e2d81f5320a102342a88fda2c1c269dd, type: 3}
 --- !u!1 &1972156035
