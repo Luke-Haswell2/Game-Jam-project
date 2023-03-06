@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class Collectible : MonoBehaviour
 {
-    enum Effect
+    public enum Effect
     {
         None,
         Speed,
         Life,
         Strength
     }
-    Effect effect;
+    public Effect effect;
     public int pointValue;
     void OnTriggerEnter2D(Collider2D collision)
     {
@@ -19,15 +19,24 @@ public class Collectible : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             Score.score += pointValue;
+            ApplyEffect(collision);
             Destroy(gameObject);
         }
     }
 
-    void ApplyEffect()
+    void ApplyEffect(Collider2D collision)
     {
         switch (effect)
         {
-
+            case Effect.Speed:
+                StartCoroutine(collision.GetComponent<Player>().ApplySpeedPowerup());
+                break;
+            case Effect.Strength:
+                StartCoroutine(collision.GetComponent<Player>().ApplyStrengthPowerup());
+                break;
+            case Effect.Life:
+                collision.GetComponent<Player>().ApplyLifePowerup();
+                break;
         }
     }
 }

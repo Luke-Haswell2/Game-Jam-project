@@ -220,6 +220,7 @@ GameObject:
   - component: {fileID: 136102368}
   - component: {fileID: 136102367}
   - component: {fileID: 136102366}
+  - component: {fileID: 136102371}
   m_Layer: 0
   m_Name: Wizard
   m_TagString: Untagged
@@ -244,7 +245,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.5, y: 1.5}
+    oldSize: {x: 0.32, y: 0.55}
     newSize: {x: 0.32, y: 0.55}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -361,6 +362,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &136102371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 136102365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c7552ab881434947b50694f42d8a708, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 838883132}
 --- !u!1 &152304526
 GameObject:
   m_ObjectHideFlags: 0
@@ -952,6 +966,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abf62f8f601c8ab4c8d3cc48d195bdec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  normalSpeedMultiplier: 1
+  powerupSpeedMultiplier: 1.5
+  normalDamageMultiplier: 1
+  powerupDamageMultiplier: 1.5
 --- !u!1 &945747199 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6118912831073280091, guid: d91d660d6a22e414dafcbe9511dc650e, type: 3}
