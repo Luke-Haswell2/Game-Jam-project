@@ -8,12 +8,16 @@ public class Wizard : MonoBehaviour
     Rigidbody2D rb;
     private Animator anim;
     SpriteRenderer sr;
+    HealthAndCombat healthAndCombat;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
+        healthAndCombat = GetComponent<HealthAndCombat>();
+        healthAndCombat.OnDamage += OnDamage;
+        healthAndCombat.OnDeath += OnDeath;
     }
 
     void Update()
@@ -27,5 +31,14 @@ public class Wizard : MonoBehaviour
             anim.SetBool("Idle", true);
             anim.SetBool("Attack", false);
         }
+    }
+    void OnDamage(int amount)
+    {
+
+    }
+
+    void OnDeath()
+    {
+
     }
 }

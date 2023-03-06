@@ -12,12 +12,16 @@ public class Enemy : MonoBehaviour
     public float speed;
     private Animator anim;
     public GameObject Player;
+    HealthAndCombat healthAndCombat;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         currentPoint = pointB.transform;
         anim = GetComponent<Animator>();
+        healthAndCombat = GetComponent<HealthAndCombat>();
+        healthAndCombat.OnDamage += OnDamage;
+        healthAndCombat.OnDeath += OnDeath;
     }
 
     void Update()
@@ -52,5 +56,14 @@ public class Enemy : MonoBehaviour
             anim.SetBool("Walk", true);
             anim.SetBool("Attack", false);
         }
+    }
+    void OnDamage(int amount)
+    {
+
+    }
+
+    void OnDeath()
+    {
+
     }
 }
