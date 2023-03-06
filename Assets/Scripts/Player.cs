@@ -5,14 +5,40 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     Rigidbody2D rb;
-    float speed;
-    float damage;
+    public float normalSpeedMultiplier = 1;
+    public float powerupSpeedMultiplier = 1.5f;
+    public float normalDamageMultiplier = 1;
+    public float powerupDamageMultiplier = 1.5f;
+
+    float health = 100.0f;
+
+    float currentSpeedMultiplier;
+    float currentDamageMultiplier;
 
     bool wantsJump;
 
     void Start()
     {
+        currentSpeedMultiplier = normalSpeedMultiplier;
+        currentDamageMultiplier = normalDamageMultiplier;
         rb = GetComponent<Rigidbody2D>();
+    }
+
+    public IEnumerator ApplySpeedPowerup()
+    {
+        currentSpeedMultiplier = powerupSpeedMultiplier;
+        yield return new WaitForSeconds(30);
+        currentSpeedMultiplier = normalSpeedMultiplier;
+    }
+    public IEnumerator ApplyStrengthPowerup()
+    {
+        currentSpeedMultiplier = powerupDamageMultiplier;
+        yield return new WaitForSeconds(30);
+        currentSpeedMultiplier = normalDamageMultiplier;
+    }
+    public void ApplyLifePowerup()
+    {
+        health += 20;
     }
 
     private void Update()
@@ -39,6 +65,6 @@ public class Player : MonoBehaviour
             rb.AddForce(new Vector2(0, 20), ForceMode2D.Impulse);
             wantsJump = false;
         }
-        rb.AddForce(new Vector2(verticalVel * 40 * rb.mass, 0));
+        rb.AddForce(new Vector2(verticalVel * currentSpeedMultiplier * 40 * rb.mass, 0));
     }
 }
