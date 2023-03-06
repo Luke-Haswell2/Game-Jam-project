@@ -11,6 +11,7 @@ public class Enemy : MonoBehaviour
     private Transform currentPoint;
     public float speed;
     private Animator anim;
+    public GameObject Player;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -41,6 +42,15 @@ public class Enemy : MonoBehaviour
         {
             currentPoint = pointB.transform;
             sr.flipX = false;
+        }
+        if ((transform.position.x-1 <= Player.transform.position.x) || (transform.position.x+1 >= Player.transform.position.x))
+            {
+                anim.SetBool("Attack", true);
+            }
+        if ((transform.position.x-1 > Player.transform.position.x) || (transform.position.x+1 < Player.transform.position.x))
+        {
+            anim.SetBool("Walk", true);
+            anim.SetBool("Attack", false);
         }
     }
 }
