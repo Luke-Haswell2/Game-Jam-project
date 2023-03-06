@@ -43,11 +43,11 @@ public class Enemy : MonoBehaviour
             currentPoint = pointB.transform;
             sr.flipX = false;
         }
-        if ((transform.position.x-1 <= Player.transform.position.x) || (transform.position.x+1 >= Player.transform.position.x))
+        if ((transform.position.x-2 <= Player.transform.position.x) || (transform.position.x+2 >= Player.transform.position.x))
             {
                 anim.SetBool("Attack", true);
             }
-        if ((transform.position.x-1 > Player.transform.position.x) || (transform.position.x+1 < Player.transform.position.x))
+        if ((transform.position.x-2 > Player.transform.position.x) || (transform.position.x+2 < Player.transform.position.x))
         {
             anim.SetBool("Walk", true);
             anim.SetBool("Attack", false);
