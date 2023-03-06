@@ -4,27 +4,41 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public GameObject Player;
+    public GameObject pointA;
+    public GameObject pointB;
     Rigidbody2D rb;
     SpriteRenderer sr;
-
+    private Transform currentPoint;
+    public float speed;
+    private Animator anim;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
+        currentPoint = pointB.transform;
+        anim = GetComponent<Animator>();
     }
-
 
     void Update()
     {
-        if ((Player.transform.position.x < transform.position.x) && (transform.position.x-5 <= Player.transform.position.x))
+        Vector2 point = currentPoint.position - transform.position;
+        if(currentPoint == pointB.transform)
         {
-            rb.velocity = new Vector2 (-1, rb.velocity.y);
+            rb.velocity = new Vector2(speed, 0);
         }
-
-        if ((Player.transform.position.x > transform.position.x) && (transform.position.x+5 >= Player.transform.position.x))
+        else
         {
-            rb.velocity = new Vector2 (1, rb.velocity.y);
+            rb.velocity = new Vector2(-speed, 0);
+        }
+        if(Vector2.Distance(transform.position, currentPoint.position) < 0.5f && currentPoint == pointB.transform)
+        {
+            currentPoint = pointA.transform;
+            sr.flipX = true;
+        }
+        if(Vector2.Distance(transform.position, currentPoint.position) < 0.5f && currentPoint == pointA.transform)
+        {
+            currentPoint = pointB.transform;
+            sr.flipX = false;
         }
     }
 }
