@@ -22,11 +22,11 @@ public class Wizard : MonoBehaviour
 
     void Update()
     {
-        if ((transform.position.x-5 <= Player.transform.position.x) || (transform.position.x + 5 <= Player.transform.position.x))
+        if (transform.position.x-5 <= Player.transform.position.x)
         {
             anim.SetBool("Attack", true);
         }
-        if ((transform.position.x-5 > Player.transform.position.x) || (transform.position.x + 5 > Player.transform.position.x))
+        if (transform.position.x-5 > Player.transform.position.x)
         {
             anim.SetBool("Idle", true);
             anim.SetBool("Attack", false);
