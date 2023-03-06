@@ -25,6 +25,7 @@ public class Wizard : MonoBehaviour
         if (transform.position.x-5 > Player.transform.position.x)
         {
             anim.SetBool("Idle", true);
+            anim.SetBool("Attack", false);
         }
     }
 }
