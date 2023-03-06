@@ -48,9 +48,9 @@ public class Enemy : MonoBehaviour
             sr.flipX = false;
         }
         if ((transform.position.x-2 <= Player.transform.position.x) || (transform.position.x+2 >= Player.transform.position.x))
-            {
+        {
                 anim.SetBool("Attack", true);
-            }
+        }
         if ((transform.position.x-2 > Player.transform.position.x) || (transform.position.x+2 < Player.transform.position.x))
         {
             anim.SetBool("Walk", true);
