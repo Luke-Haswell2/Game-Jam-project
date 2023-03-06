@@ -20,11 +20,11 @@ public class Wizard : MonoBehaviour
     {
         if (transform.position.x-5 <= Player.transform.position.x)
         {
-
+            anim.SetBool("WizardAttack", true);
         }
         if (transform.position.x-5 > Player.transform.position.x)
         {
-
+            anim.SetBool("WizardIdle", true);
         }
     }
 }
