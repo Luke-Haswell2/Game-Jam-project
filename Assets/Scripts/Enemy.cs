@@ -25,10 +25,12 @@ public class Enemy : MonoBehaviour
         if(currentPoint == pointB.transform)
         {
             rb.velocity = new Vector2(speed, 0);
+            anim.SetBool("Walk", true);
         }
         else
         {
             rb.velocity = new Vector2(-speed, 0);
+            anim.SetBool("Walk", true);
         }
         if(Vector2.Distance(transform.position, currentPoint.position) < 0.5f && currentPoint == pointB.transform)
         {
