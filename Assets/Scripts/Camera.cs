@@ -5,7 +5,7 @@ using UnityEngine;
 public class Camera : MonoBehaviour
 {
     public float FollowSpeed = 2f;
-    public float yOffset = 1f;
+    public float yOffset = 3.5f;
     public Transform target;
 
     // Update is called once per frame

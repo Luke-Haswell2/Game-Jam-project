@@ -221,6 +221,7 @@ GameObject:
   - component: {fileID: 136102367}
   - component: {fileID: 136102366}
   - component: {fileID: 136102371}
+  - component: {fileID: 136102372}
   m_Layer: 0
   m_Name: Wizard
   m_TagString: Untagged
@@ -375,6 +376,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 838883132}
+--- !u!114 &136102372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 136102365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb9cfe1900464a24e94de840dc16da96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  currentHealth: 0
 --- !u!1 &152304526
 GameObject:
   m_ObjectHideFlags: 0
@@ -473,7 +488,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FollowSpeed: 2
-  yOffset: 3.36
+  yOffset: 3.5
   target: {fileID: 838883136}
 --- !u!1 &338204771
 GameObject:
@@ -813,6 +828,7 @@ GameObject:
   - component: {fileID: 838883133}
   - component: {fileID: 838883137}
   - component: {fileID: 838883138}
+  - component: {fileID: 838883139}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -970,6 +986,20 @@ MonoBehaviour:
   powerupSpeedMultiplier: 1.5
   normalDamageMultiplier: 1
   powerupDamageMultiplier: 1.5
+--- !u!114 &838883139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 838883132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb9cfe1900464a24e94de840dc16da96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  currentHealth: 0
 --- !u!1 &945747199 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6118912831073280091, guid: d91d660d6a22e414dafcbe9511dc650e, type: 3}
@@ -995,6 +1025,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &945747211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 945747199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb9cfe1900464a24e94de840dc16da96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  currentHealth: 0
 --- !u!1001 &6118912830674375844
 PrefabInstance:
   m_ObjectHideFlags: 0
