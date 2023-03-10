@@ -58,7 +58,7 @@ public class Enemy : MonoBehaviour
         {
             if (Time.time >= nextAttack)
             {
-                anim.SetBool("Attack", true);
+                anim.SetTrigger("Attack");
                 nextAttack = Time.time + 2;
                 Invoke("DoAttack", 0.5f);
             }
@@ -66,16 +66,15 @@ public class Enemy : MonoBehaviour
         else
         {
             anim.SetBool("Walk", true);
-            anim.SetBool("Attack", false);
         }
     }
     void OnDamage(int amount)
     {
-        anim.SetBool("Damage", true);
+        anim.SetTrigger("Damage");
     }
 
     void OnDeath()
     {
-        anim.SetBool("Death", true);
+        anim.SetTrigger("Death");
     }
 }
