@@ -1408,9 +1408,6 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-<<<<<<< HEAD
-  m_Offset: {x: -0.0077238083, y: -0.8573351}
-=======
   m_Offset: {x: 0, y: -0.8699075}
 >>>>>>> 4bf35266769570b38086bc60e978f2942e85807b
   m_SpriteTilingProperty:
