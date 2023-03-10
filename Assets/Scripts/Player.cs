@@ -45,7 +45,7 @@ public class Player : MonoBehaviour
 
     void OnDamage(int amount)
     {
-
+        anim.Play("Take Hit");
     }
 
     void OnDeath()
@@ -124,7 +124,7 @@ public class Player : MonoBehaviour
             verticalVel += 1;
             sr.flipX = false;
         }
-        if (!anim.GetCurrentAnimatorStateInfo(0).IsName("Attack1") || anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 1.0f)
+        if (!anim.GetCurrentAnimatorStateInfo(0).IsName("Attack1") && !anim.GetCurrentAnimatorStateInfo(0).IsName("Take Hit") || anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 1.0f)
         {
             if (Mathf.Abs(verticalVel) > 0.1)
             {
