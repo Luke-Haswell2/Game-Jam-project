@@ -47,6 +47,6 @@ public class Wizard : MonoBehaviour
 
     void OnDeath()
     {
-
+        Destroy(gameObject);
     }
 }
