@@ -472,7 +472,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb9cfe1900464a24e94de840dc16da96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  team: 0
+  team: 1
   maxHealth: 100
   currentHealth: 0
 --- !u!1 &152304526
@@ -1528,21 +1528,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6118912831073280091, guid: d91d660d6a22e414dafcbe9511dc650e, type: 3}
   m_PrefabInstance: {fileID: 1862207288}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &943117815
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 943117814}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb9cfe1900464a24e94de840dc16da96, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  team: 0
-  maxHealth: 100
-  currentHealth: 0
 --- !u!95 &943117816
 Animator:
   serializedVersion: 4
@@ -1588,21 +1573,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &945747211
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 945747199}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb9cfe1900464a24e94de840dc16da96, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  team: 0
-  maxHealth: 100
-  currentHealth: 0
 --- !u!1 &1525316028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1871,7 +1841,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb9cfe1900464a24e94de840dc16da96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  team: 0
+  team: 1
   maxHealth: 100
   currentHealth: 0
 --- !u!1001 &1862207288

@@ -50,6 +50,7 @@ public class Enemy : MonoBehaviour
         if ((transform.position.x-2 <= Player.transform.position.x) || (transform.position.x+2 >= Player.transform.position.x))
         {
             anim.SetBool("Attack", true);
+            Player.GetComponent<HealthAndCombat>().DealDamage(20, Vector2.zero);
         }
         if ((transform.position.x-2 > Player.transform.position.x) || (transform.position.x+2 < Player.transform.position.x))
         {
