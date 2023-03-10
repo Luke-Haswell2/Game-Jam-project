@@ -71,11 +71,11 @@ public class Enemy : MonoBehaviour
     }
     void OnDamage(int amount)
     {
-
+        anim.SetBool("Damage", true);
     }
 
     void OnDeath()
     {
-
+        anim.SetBool("Death", true);
     }
 }
