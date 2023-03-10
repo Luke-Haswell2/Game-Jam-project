@@ -72,7 +72,11 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        if (!healthAndCombat.alive) return;
+        if (!healthAndCombat.alive) {
+            if (!anim.GetCurrentAnimatorStateInfo(0).IsName("Death"))
+                anim.Play("Death");
+            return;
+        }
         if (Input.GetKeyDown(KeyCode.Space))
         {
             wantsJump = true;
@@ -87,6 +91,11 @@ public class Player : MonoBehaviour
             {
                 attackRect.center = new Vector2(-attackRect.center.x, attackRect.center.y);
             }
+            else
+            {
+                attackRect.center = new Vector2(attackRect.center.x, attackRect.center.y);
+            }
+            attackRect.center += (Vector2)transform.position;
             healthAndCombat.TryAttack(attackRect, damage);
 
         }
@@ -98,7 +107,12 @@ public class Player : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (!healthAndCombat.alive) return;
+        if (!healthAndCombat.alive)
+        {
+            if (!anim.GetCurrentAnimatorStateInfo(0).IsName("Death"))
+                anim.Play("Death");
+            return;
+        }
         float verticalVel = 0;
         if (Input.GetKey(KeyCode.A))
         {

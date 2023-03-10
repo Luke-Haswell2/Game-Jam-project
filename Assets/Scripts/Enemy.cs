@@ -13,6 +13,8 @@ public class Enemy : MonoBehaviour
     private Animator anim;
     public GameObject Player;
     HealthAndCombat healthAndCombat;
+
+    float nextAttack;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -47,12 +49,16 @@ public class Enemy : MonoBehaviour
             currentPoint = pointB.transform;
             sr.flipX = false;
         }
-        if ((transform.position.x-2 <= Player.transform.position.x) || (transform.position.x+2 >= Player.transform.position.x))
+        if (Mathf.Abs(transform.position.x - Player.transform.position.x) <= 2)
         {
-            anim.SetBool("Attack", true);
-            Player.GetComponent<HealthAndCombat>().DealDamage(20, Vector2.zero);
+            if (Time.time >= nextAttack)
+            {
+                anim.SetBool("Attack", true);
+                nextAttack = Time.time + 2;
+                Player.GetComponent<HealthAndCombat>().DealDamage(20, Vector2.zero);
+            }
         }
-        if ((transform.position.x-2 > Player.transform.position.x) || (transform.position.x+2 < Player.transform.position.x))
+        else
         {
             anim.SetBool("Walk", true);
             anim.SetBool("Attack", false);

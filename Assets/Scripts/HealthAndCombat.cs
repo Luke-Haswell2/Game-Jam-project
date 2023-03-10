@@ -41,10 +41,21 @@ public class HealthAndCombat : MonoBehaviour
         currentHealth = Mathf.Min(0, currentHealth + amount);
     }
 
+    Rect lastRect;
+
+    private void OnDrawGizmos()
+    {
+        if (lastRect != null)
+        {
+            Gizmos.DrawWireCube(lastRect.center, lastRect.size);
+        }
+    }
+
     public void TryAttack(Rect box, int amount, Vector2? knockbackVector = null, bool ignoreTeammates = true)
     {
         var knockbackVector_ = knockbackVector ?? Vector2.zero;
 
+        lastRect = box;
         var colliders = Physics2D.OverlapBoxAll(box.center, box.size, 0);
         foreach (Collider2D collider in colliders)
         {
