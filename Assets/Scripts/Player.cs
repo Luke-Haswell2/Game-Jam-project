@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
     public float powerupDamageMultiplier = 1.5f;
 
     public Rect attackBoundingBox;
+    public Rect groundRect;
 
     float currentSpeedMultiplier;
     float currentDamageMultiplier;
@@ -23,8 +24,10 @@ public class Player : MonoBehaviour
 
     private void OnDrawGizmos()
     {
+        Gizmos.DrawWireCube((Vector2)transform.position + groundRect.center, groundRect.size);
         Gizmos.matrix = transform.localToWorldMatrix;
         Gizmos.color = Color.red;
+        //Gizmos.DrawWireCube(groundRect.center, groundRect.size);
         Gizmos.DrawWireCube(attackBoundingBox.center, attackBoundingBox.size);
         Gizmos.DrawWireCube(new Vector2(-attackBoundingBox.center.x, attackBoundingBox.center.y), attackBoundingBox.size);
     }
@@ -72,7 +75,8 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        if (!healthAndCombat.alive) {
+        if (!healthAndCombat.alive)
+        {
             if (!anim.GetCurrentAnimatorStateInfo(0).IsName("Death"))
                 anim.Play("Death");
             return;
@@ -139,7 +143,20 @@ public class Player : MonoBehaviour
         }
         if (wantsJump)
         {
-            rb.AddForce(new Vector2(0, 20), ForceMode2D.Impulse);
+            var overlaps = Physics2D.OverlapBoxAll((Vector2)transform.position + groundRect.center, groundRect.size, 0);
+            bool canJump = false;
+            foreach (var overlap in overlaps)
+            {
+                if (!overlap.CompareTag("Player"))
+                {
+                    canJump = true;
+                    break;
+                }
+            }
+            if (canJump)
+            {
+                rb.AddForce(new Vector2(0, 20), ForceMode2D.Impulse);
+            }
             wantsJump = false;
         }
         rb.AddForce(new Vector2(verticalVel * currentSpeedMultiplier * 40 * rb.mass, 0));
