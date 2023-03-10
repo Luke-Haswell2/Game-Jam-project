@@ -33,11 +33,11 @@ public class Wizard : MonoBehaviour
         }
         if (Player.transform.position.x > transform.position.x)
         {
-            sr.flipX = true;
+            sr.flipX = false;
         }
         if (Player.transform.position.x < transform.position.x)
         {
-            sr.flipX = false;
+            sr.flipX = true;
         }
     }
     void OnDamage(int amount)
