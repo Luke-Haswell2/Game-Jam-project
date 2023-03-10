@@ -50,7 +50,7 @@ public class Player : MonoBehaviour
 
     void OnDeath()
     {
-        anim.Play("PlayerDeath");
+        anim.Play("Death");
     }
 
     public IEnumerator ApplySpeedPowerup()
@@ -77,9 +77,9 @@ public class Player : MonoBehaviour
         {
             wantsJump = true;
         }
-        if (Input.GetKeyDown(KeyCode.F) && !anim.GetCurrentAnimatorStateInfo(0).IsName("PlayerAttack"))
+        if (Input.GetKeyDown(KeyCode.F) && !anim.GetCurrentAnimatorStateInfo(0).IsName("Attack1"))
         {
-            anim.Play("Attack");
+            anim.Play("Attack1");
             int damage = (int)(10 * currentDamageMultiplier);
             Rect attackRect = attackBoundingBox;
 
@@ -110,12 +110,12 @@ public class Player : MonoBehaviour
             verticalVel += 1;
             sr.flipX = false;
         }
-        if (!anim.GetCurrentAnimatorStateInfo(0).IsName("Attack") || anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 1.0f)
+        if (!anim.GetCurrentAnimatorStateInfo(0).IsName("Attack1") || anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 1.0f)
         {
             if (Mathf.Abs(verticalVel) > 0.1)
             {
-                if (!anim.GetCurrentAnimatorStateInfo(0).IsName("PlayerRun"))
-                    anim.Play("PlayerRun");
+                if (!anim.GetCurrentAnimatorStateInfo(0).IsName("Run"))
+                    anim.Play("Run");
             }
             else
             {
