@@ -2091,6 +2091,10 @@ PrefabInstance:
       propertyPath: pointB
       value: 
       objectReference: {fileID: 338204771}
+    - target: {fileID: 6118912831073280421, guid: d91d660d6a22e414dafcbe9511dc650e, type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 6118912831073280422, guid: d91d660d6a22e414dafcbe9511dc650e, type: 3}
       propertyPath: m_Size.x
       value: 1.3950715
