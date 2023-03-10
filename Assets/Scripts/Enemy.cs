@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
@@ -26,6 +27,10 @@ public class Enemy : MonoBehaviour
         healthAndCombat.OnDeath += OnDeath;
     }
 
+    void DoAttack()
+    {
+        Player.GetComponent<HealthAndCombat>().DealDamage(20, Vector2.zero);
+    }
     void Update()
     {
         Vector2 point = currentPoint.position - transform.position;
@@ -53,24 +58,23 @@ public class Enemy : MonoBehaviour
         {
             if (Time.time >= nextAttack)
             {
-                anim.SetBool("Attack", true);
+                anim.SetTrigger("Attack");
                 nextAttack = Time.time + 2;
-                Player.GetComponent<HealthAndCombat>().DealDamage(20, Vector2.zero);
+                Invoke("DoAttack", 0.5f);
             }
         }
         else
         {
             anim.SetBool("Walk", true);
-            anim.SetBool("Attack", false);
         }
     }
     void OnDamage(int amount)
     {
-
+        anim.SetTrigger("Damage");
     }
 
     void OnDeath()
     {
-
+        anim.SetTrigger("Death");
     }
 }
